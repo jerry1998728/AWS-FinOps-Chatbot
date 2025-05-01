@@ -21,7 +21,6 @@ It turns raw cost reports into meaningful insights, enabling users to ask natura
 ---
 
 
-
 ## Proudest Achievement
 ## Problem Encountered
 
@@ -46,10 +45,14 @@ To enable consistent and accurate LLM responses by transforming billing data int
   - **Year-To-Date (YTD)**
   - **Department Cumulative**
   - **Service Cumulative**
+<img width="572" alt="Screenshot 2025-05-01 at 14 22 14" src="https://github.com/user-attachments/assets/4aebdc57-740a-4fdf-89bf-096d690e65b0" />
 
 - Automated the calculation of financial reporting metrics:
   - Total Cost, Cost %, QoQ/YoY Change
   - Financial summaries in natural-language format
+<img width="1289" alt="Screenshot 2025-05-01 at 14 20 36" src="https://github.com/user-attachments/assets/03275577-b914-4cd4-bf92-40d9f21f61d8" />
+
+
 
 ### Retrieval Optimization
 
@@ -64,3 +67,4 @@ To enable consistent and accurate LLM responses by transforming billing data int
 - The LLM now answers both simple and advanced finance questions with accuracy and consistency.
 - Retrieval precision significantly improved due to granular summary text.
 - Non-determinism is reduced through clear, structured data context.
+<img width="1283" alt="Screenshot 2025-05-01 at 14 24 34" src="https://github.com/user-attachments/assets/754922de-46d4-45a5-8766-2425b30c4a0a" />
