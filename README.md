@@ -60,7 +60,9 @@ With the default chunking strategy, LLM constantly and blindly mixes up or merge
   - For example, when being asked "What is the total cost for the marketing department as of 10/31/2024?", the result would be something that has the same date mentioned but for some specific service not mentioned in the user query, or even mixes things up between department and time frames.
 
 By exploring different chunking strategies, I discovered that the optimized way for my engineered and structured financial summaries is **Hierarchical Chunking**, with the advantages of:
-  - Data Structure Respect
+  - Splits and respects the data structure
+    - Parent node ()
+    - Child node ()
   - Preserves Relationships and Reduces Mixing
     - semantically clean
     - contextually scoped (a single department in a single quarter)
@@ -73,9 +75,30 @@ By exploring different chunking strategies, I discovered that the optimized way 
 
 ---
 
-## Results
+## Use Cases Validation & Evaluation
+* Departmental Cost & Metrics Summary
+  * <img width="654" alt="Screenshot 2025-05-07 at 15 00 55" src="https://github.com/user-attachments/assets/ee160665-3087-4823-9db9-2fe511dad27c" />
 
+* Service cumulative cost & metrics by department
+  * <img width="679" alt="Screenshot 2025-05-07 at 15 02 59" src="https://github.com/user-attachments/assets/e1ac7791-9e39-473c-b9a8-6e64da98b6c9" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## As a Result
 - The LLM now answers simple and advanced finance questions accurately and consistently.
-- Retrieval precision significantly improved due to granular summary text.
-- Non-determinism is reduced through a clear, structured data context.
-<img width="1283" alt="Screenshot 2025-05-01 at 14 24 34" src="https://github.com/user-attachments/assets/754922de-46d4-45a5-8766-2425b30c4a0a" />
+- 100% Retrieval precision.
+- 0% Non-determinism and hallucination.
+
+
