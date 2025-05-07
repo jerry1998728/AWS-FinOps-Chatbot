@@ -22,9 +22,9 @@ It turns raw cost reports into meaningful insights, enabling users to ask natura
 
 
 ## Proudest Achievement
-## Problem Encountered
+## Problems Encountered
 
-Traditional AWS billing reports are wide-format, dense, and difficult to navigate. Even when reshaped into long format, LLMs struggle with:
+Original AWS billing reports are wide-format, dense, and difficult to navigate. Even when reshaped into long format, LLMs struggle with:
 - Inconsistent data chunk retrieval
 - Non-deterministic answers
 - Poor performance on common financial metrics (QoQ, YTD, etc.)
@@ -33,7 +33,7 @@ Traditional AWS billing reports are wide-format, dense, and difficult to navigat
 
 ## Objective Defined
 
-To enable consistent and accurate LLM responses by transforming billing data into a semantically rich, vector-friendly format for generative search.
+To enable consistent and accurate LLM responses by transforming cost data into a semantically rich, vector-friendly format for similarity search.
 
 ---
 
@@ -52,19 +52,30 @@ To enable consistent and accurate LLM responses by transforming billing data int
   - Financial summaries in natural-language format
 <img width="1289" alt="Screenshot 2025-05-01 at 14 20 36" src="https://github.com/user-attachments/assets/03275577-b914-4cd4-bf92-40d9f21f61d8" />
 
+### Default Chunking Strategy vs Optimized Chunking Strategy
 
+After pre-processing and engineering the raw data in the best way, based on my corporate analytics and financial reporting experience, I re-evaluated the chunking strategy because the problems of inaccurate retrieval of data, non-deterministic answers, and hallucinations still exist.
 
-### Retrieval Optimization
+With the default chunking strategy, LLM constantly and blindly mixes up or merges different records and summaries with the same date, due to blind slicing at ~300 tokens, regardless of the semantic meaning.
+  - For example, when being asked "What is the total cost for the marketing department as of 10/31/2024?", the result would be something that has the same date mentioned but for some specific service not mentioned in the user query, or even mixes things up between department and time frames.
 
-- Embedded text summaries into OpenSearch for RAG-style retrieval
-- Tuned prompt design for summarization and metric interpretation
-- Used Bedrock-hosted LLMs for accurate, warm-toned explanations
+By exploring different chunking strategies, I discovered that the optimized way for my engineered and structured financial summaries is **Hierarchical Chunking**, with the advantages of:
+  - Data Structure Respect
+  - Preserves Relationships and Reduces Mixing
+    - semantically clean
+    - contextually scoped (a single department in a single quarter)
+    - linked to its parent (the overall quarterly report)
+  - Efficient Token Management
+    - set parent token sizes @ 1500 for broader context
+    - set child token sizes @ 300 for precise granularity
+    - set token overlap @ 60 to maintain continuity for edge queries
+
 
 ---
 
 ## Results
 
-- The LLM now answers both simple and advanced finance questions with accuracy and consistency.
+- The LLM now answers simple and advanced finance questions accurately and consistently.
 - Retrieval precision significantly improved due to granular summary text.
-- Non-determinism is reduced through clear, structured data context.
+- Non-determinism is reduced through a clear, structured data context.
 <img width="1283" alt="Screenshot 2025-05-01 at 14 24 34" src="https://github.com/user-attachments/assets/754922de-46d4-45a5-8766-2425b30c4a0a" />
