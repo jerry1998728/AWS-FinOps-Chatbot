@@ -1,18 +1,16 @@
+---
 # AWS Finance Operations Chatbot
 ## Overview
-An intelligent finance reporting assistant that uses generative AI and AWS services to make complex cost data easily queryable and interpretable. This project solves retrieval consistency issues in LLM-based systems by preprocessing financial data into structured, summary-rich formats.
-
-
+An intelligent finance reporting assistant that uses generative AI and AWS services to make complex cost data easily queryable and interpretable.
 This chatbot is designed for internal employees working with AWS billing data and wishes to keep track, gain insights, and make informed decisions. 
 It turns raw cost reports into meaningful insights, enabling users to ask natural-language questions and get accurate, explainable responses.
 
 
 
 ## End-To-End Pipeline
-
 - **Amazon S3** – Stores raw and transformed billing data
 - **Amazon OpenSearch Serverless** – Vector search for LLM retrieval (RAG)
-- **Amazon Bedrock** – Powers foundation models for response generation
+- **Amazon Bedrock** – Powers foundation models for response generation with knowledge base connected to S3
 - **Amazon Lex** – Front-end Integration for conversational user interface
 
 ---
@@ -20,41 +18,40 @@ It turns raw cost reports into meaningful insights, enabling users to ask natura
 
 # Proudest Achievement
 ## Problems Encountered
+Original AWS billing reports are wide-format, dense, and difficult to navigate.
+- Raw Data
+  - <img width="666" alt="Screenshot 2025-05-07 at 15 33 06" src="https://github.com/user-attachments/assets/7a20defa-de41-4076-a45f-e752e86fc60d" />
 
-Original AWS billing reports are wide-format, dense, and difficult to navigate. Even when reshaped into long format, LLMs struggle with:
+Even after reshaping into long format, LLMs still struggle with:
 - Inconsistent data chunk retrieval
-- Non-deterministic answers
-- Poor performance on common financial metrics (QoQ, YTD, etc.)
+- Non-deterministic response
+- Hallucination and mixture with similar time frames data (QoQ, YTD, etc.)
 
----
 
 ## Objective Defined
-
 To enable consistent and accurate LLM responses by transforming cost data into a semantically rich, vector-friendly format for similarity search.
 
----
 
 ### Data Engineering
-
-- Reorganized data into key financial views:
+- Reorganized into key financial reporting perspectives:
   - **Month-To-Date (MTD)**
   - **Quarter-To-Date (QTD)**
   - **Year-To-Date (YTD)**
   - **Department Cumulative**
   - **Service Cumulative**
-<img width="572" alt="Screenshot 2025-05-01 at 14 22 14" src="https://github.com/user-attachments/assets/4aebdc57-740a-4fdf-89bf-096d690e65b0" />
+  - <img width="666" alt="Screenshot 2025-05-01 at 14 22 14" src="https://github.com/user-attachments/assets/4aebdc57-740a-4fdf-89bf-096d690e65b0" />
 
 - Automated the calculation of financial reporting metrics:
   - Total Cost, Cost %, QoQ/YoY Change
   - Financial summaries in natural-language format
-<img width="1289" alt="Screenshot 2025-05-01 at 14 20 36" src="https://github.com/user-attachments/assets/03275577-b914-4cd4-bf92-40d9f21f61d8" />
+  - <img width="666" alt="Screenshot 2025-05-01 at 14 20 36" src="https://github.com/user-attachments/assets/03275577-b914-4cd4-bf92-40d9f21f61d8" />
+
 
 ### Default Chunking Strategy vs Optimized Chunking Strategy
-
-After pre-processing and engineering the raw data in the best way, based on my corporate analytics and financial reporting experience, I re-evaluated the chunking strategy because the problems of inaccurate retrieval of data, non-deterministic answers, and hallucinations still exist.
+After pre-processing and engineering the raw data in the best way, based on my corporate analytics and financial reporting experience, I re-evaluated the chunking strategy because the problems of inaccurate retrieval of data, non-deterministic answers, and hallucinations continued.
 
 With the default chunking strategy, LLM constantly and blindly mixes up or merges different records and summaries with the same date, due to blind slicing at ~300 tokens, regardless of the semantic meaning.
-  - For example, when being asked "What is the total cost for the marketing department as of 10/31/2024?", the result would be something that has the same date mentioned but for some specific service not mentioned in the user query, or even mixes things up between department and time frames.
+  - For example, when asking "What is the total cost for the marketing department as of 10/31/2024?", the result would be something that has the same date mentioned but for some specific service not mentioned in the user query, or even mixes things up between department and time frames.
 
 By exploring different chunking strategies, I discovered that the optimized way for my engineered and structured financial summaries is **Hierarchical Chunking**, with the advantages of:
   - Splits and respects the data structure
@@ -70,10 +67,16 @@ By exploring different chunking strategies, I discovered that the optimized way 
     - set token overlap @ 60 to maintain continuity for edge queries
 
 
----
+## As a Result
+- The LLM now answers simple and advanced finance questions accurately and consistently.
+- 100% Retrieval precision.
+- 0% Non-determinism and hallucination.
 
-## Use Cases Validation & Evaluation
+
+## Use Cases Validation & Evaluation with Ground Truth Comparison
 * Departmental Cost & Metrics Summary
+  * Ground Truth: <img width="1669" alt="Screenshot 2025-05-07 at 15 57 31" src="https://github.com/user-attachments/assets/9003ff2f-5433-4911-bf46-ddeb19cfdbe9" />
+
   * <img width="666" alt="Screenshot 2025-05-07 at 15 00 55" src="https://github.com/user-attachments/assets/ee160665-3087-4823-9db9-2fe511dad27c" />
 
 * Service Cumulative Cost & Metrics by Department
@@ -105,9 +108,6 @@ By exploring different chunking strategies, I discovered that the optimized way 
 
 
 
-## As a Result
-- The LLM now answers simple and advanced finance questions accurately and consistently.
-- 100% Retrieval precision.
-- 0% Non-determinism and hallucination.
+
 
 
