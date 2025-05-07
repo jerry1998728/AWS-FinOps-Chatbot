@@ -54,13 +54,17 @@ With the default chunking strategy, LLM constantly and blindly mixes up or merge
   - For example, when asking "What is the total cost for the marketing department as of 10/31/2024?", the result would be something that has the same date mentioned but for some specific service not mentioned in the user query, or even mixes things up between department and time frames.
 
 By exploring different chunking strategies, I discovered that the optimized way for my engineered and structured financial summaries is **Hierarchical Chunking**, with the advantages of:
-  - Splits and respects the data structure
-    - Parent node ()
-    - Child node ()
+  - Splits and respects the data structure.
+    - For example, the Month-To-Date data would be chunked by:
+      - Parent node (The Reporting Month)
+      - Child node (Department)
+    - Or the Service Cumulative data would be chunked by:
+      - Parent node (AWS Service)
+      - Child node (Department)
   - Preserves Relationships and Reduces Mixing
     - semantically clean
     - contextually scoped (a single department in a single quarter)
-    - linked to its parent (the overall quarterly report)
+    - linkage between parent and child nodes
   - Efficient Token Management
     - set parent token sizes @ 1500 for broader context
     - set child token sizes @ 300 for precise granularity
@@ -68,9 +72,9 @@ By exploring different chunking strategies, I discovered that the optimized way 
 
 
 ## As a Result
-- The LLM now answers simple and advanced finance questions accurately and consistently.
-- 100% Retrieval precision.
-- 0% Non-determinism and hallucination.
+- The LLM now answers simple and complex finance reporting and operational questions with consistent accuracy.
+- 100% Retrieval Precision.
+- 0% Non-Determinism and Hallucination.
 
 
 ## Use Cases Validation & Evaluation with Ground Truth Comparison
@@ -84,7 +88,7 @@ By exploring different chunking strategies, I discovered that the optimized way 
   * Ground Truth:
     <img width="888" alt="Screenshot 2025-05-07 at 16 16 51" src="https://github.com/user-attachments/assets/ac564e63-4c85-4ed3-adf4-cd19617a0ea8" />
   * Chatbot Response:
-    <img width="888" alt="Screenshot 2025-05-07 at 15 02 59" src="https://github.com/user-attachments/assets/e1ac7791-9e39-473c-b9a8-6e64da98b6c9" />
+    <img width="888" alt="Screenshot 2025-05-07 at 15 16 11" src="https://github.com/user-attachments/assets/1ae03a55-101e-4a8a-969d-bbf8894ba8d3" />
 
 * Annual Cost & Metrics by Department
   * Ground Truth:
@@ -99,13 +103,16 @@ By exploring different chunking strategies, I discovered that the optimized way 
     <img width="888" alt="Screenshot 2025-05-07 at 15 04 42" src="https://github.com/user-attachments/assets/3d5e1533-024d-4642-a601-5fbfd6d84267" />
 
 * Monthly Cost & Metrics by Department
-  * <img width="888" alt="Screenshot 2025-05-07 at 15 13 17" src="https://github.com/user-attachments/assets/92f306ee-d914-4470-9601-dee640ac8fe1" />
+  * Ground Truth:
+    <img width="888" alt="Screenshot 2025-05-07 at 16 27 47" src="https://github.com/user-attachments/assets/9d9d1dbf-72be-4ee9-af9e-b1e78015666d" />
+  * Chatbot Response:
+    <img width="888" alt="Screenshot 2025-05-07 at 15 13 17" src="https://github.com/user-attachments/assets/92f306ee-d914-4470-9601-dee640ac8fe1" />
 
-* Sum Cost by Filtering for Specific Department and Service Type
-  * <img width="888" alt="Screenshot 2025-05-07 at 15 16 11" src="https://github.com/user-attachments/assets/1ae03a55-101e-4a8a-969d-bbf8894ba8d3" />
-
-* Sum Cost by Specific Department, Service Type, and Multiple Dates
-  * <img width="888" alt="Screenshot 2025-05-07 at 15 20 05" src="https://github.com/user-attachments/assets/6573c83b-d95e-4f98-8672-7f990692171a" />
+* Sum Cost by Filtering for Specific Department, Service Type, and Multiple Dates
+  * Ground Truth:
+    <img width="888" alt="Screenshot 2025-05-07 at 16 31 55" src="https://github.com/user-attachments/assets/39bdc8bc-5539-4191-b30c-4884773adbd8" />
+  * Chatbot Response:
+    <img width="888" alt="Screenshot 2025-05-07 at 15 20 05" src="https://github.com/user-attachments/assets/6573c83b-d95e-4f98-8672-7f990692171a" />
 
 
 
