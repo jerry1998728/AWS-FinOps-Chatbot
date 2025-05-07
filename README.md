@@ -74,25 +74,25 @@ By exploring different chunking strategies, I discovered that the optimized way 
 
 ## Use Cases Validation & Evaluation
 * Departmental Cost & Metrics Summary
-  * <img width="654" alt="Screenshot 2025-05-07 at 15 00 55" src="https://github.com/user-attachments/assets/ee160665-3087-4823-9db9-2fe511dad27c" />
+  * <img width="666" alt="Screenshot 2025-05-07 at 15 00 55" src="https://github.com/user-attachments/assets/ee160665-3087-4823-9db9-2fe511dad27c" />
 
 * Service Cumulative Cost & Metrics by Department
-  * <img width="679" alt="Screenshot 2025-05-07 at 15 02 59" src="https://github.com/user-attachments/assets/e1ac7791-9e39-473c-b9a8-6e64da98b6c9" />
+  * <img width="666" alt="Screenshot 2025-05-07 at 15 02 59" src="https://github.com/user-attachments/assets/e1ac7791-9e39-473c-b9a8-6e64da98b6c9" />
 
 * Annual Cost & Metrics by Department
-  * <img width="677" alt="Screenshot 2025-05-07 at 15 03 56" src="https://github.com/user-attachments/assets/e2261f32-8f36-41d3-b1eb-879288f9d017" />
+  * <img width="666" alt="Screenshot 2025-05-07 at 15 03 56" src="https://github.com/user-attachments/assets/e2261f32-8f36-41d3-b1eb-879288f9d017" />
 
 * Quarterly Cost & Metrics by Department
-  * <img width="690" alt="Screenshot 2025-05-07 at 15 04 42" src="https://github.com/user-attachments/assets/3d5e1533-024d-4642-a601-5fbfd6d84267" />
+  * <img width="666" alt="Screenshot 2025-05-07 at 15 04 42" src="https://github.com/user-attachments/assets/3d5e1533-024d-4642-a601-5fbfd6d84267" />
 
 * Monthly Cost & Metrics by Department
-  * <img width="675" alt="Screenshot 2025-05-07 at 15 13 17" src="https://github.com/user-attachments/assets/92f306ee-d914-4470-9601-dee640ac8fe1" />
+  * <img width="666" alt="Screenshot 2025-05-07 at 15 13 17" src="https://github.com/user-attachments/assets/92f306ee-d914-4470-9601-dee640ac8fe1" />
 
 * Sum Cost by Filtering for Specific Department and Service Type
-  * <img width="678" alt="Screenshot 2025-05-07 at 15 16 11" src="https://github.com/user-attachments/assets/1ae03a55-101e-4a8a-969d-bbf8894ba8d3" />
+  * <img width="666" alt="Screenshot 2025-05-07 at 15 16 11" src="https://github.com/user-attachments/assets/1ae03a55-101e-4a8a-969d-bbf8894ba8d3" />
 
 * Sum Cost by Specific Department, Service Type, and Multiple Dates
-  * <img width="679" alt="Screenshot 2025-05-07 at 15 20 05" src="https://github.com/user-attachments/assets/6573c83b-d95e-4f98-8672-7f990692171a" />
+  * <img width="666" alt="Screenshot 2025-05-07 at 15 20 05" src="https://github.com/user-attachments/assets/6573c83b-d95e-4f98-8672-7f990692171a" />
 
 
 
