@@ -48,7 +48,7 @@ To enable consistent and accurate LLM responses by transforming cost data into a
 
 
 ### Default Chunking Strategy vs Optimized Chunking Strategy
-After pre-processing and engineering the raw data in the best way, based on my corporate analytics and financial reporting experience, I re-evaluated the chunking strategy because the problems of inaccurate retrieval of data, non-deterministic answers, and hallucinations continued.
+After pre-processing and engineering the raw data using my corporate analytics and financial reporting experience, I re-evaluated the chunking strategy because the problems of inaccurate retrieval of data, non-deterministic answers, and hallucinations continued during evaluations.
 
 With the default chunking strategy, LLM constantly and blindly mixes up or merges different records and summaries with the same date, due to blind slicing at ~300 tokens, regardless of the semantic meaning.
   - For example, when asking "What is the total cost for the marketing department as of 10/31/2024?", the result would be something that has the same date mentioned but for some specific service not mentioned in the user query, or even mixes things up between department and time frames.
