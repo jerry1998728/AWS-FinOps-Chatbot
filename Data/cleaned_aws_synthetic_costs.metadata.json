@@ -1,0 +1,86 @@
+{
+    "raw": {
+        "columns": [
+            "Reporting Date",
+            "AWS Account ID",
+            "Department",
+            "Date",
+            "Year",
+            "Quarter",
+            "Month",
+            "Service",
+            "Cost"
+        ],
+        "row_count": 3600,
+        "description": "Metadata for raw data"
+    },
+    "MTD": {
+        "columns": [
+            "Reporting Date",
+            "AWS Account ID",
+            "Department",
+            "Total Cost",
+            "Total Cost (%)",
+            "Monthly Total Percentage (%)",
+            "MoM Change ($)",
+            "MoM Change (%)",
+            "Monthly Summary"
+        ],
+        "row_count": 115,
+        "description": "Metadata for sheet Month-To-Date"
+    },
+    "QTD": {
+        "columns": [
+            "Year- Quarter",
+            "AWS Account ID",
+            "Department",
+            "Total Cost ($)",
+            "Cumulative (%)",
+            "Quarter Percentage (%)",
+            "QoQ Change ($)",
+            "QoQ Change (%)",
+            "Prior Quarter",
+            "Quarterly Summary"
+        ],
+        "row_count": 40,
+        "description": "Metadata for sheet 'QTD' without textual summaries."
+    },
+    "YTD": {
+        "columns": [
+            "Year",
+            "AWS Account ID",
+            "Department",
+            "Total Cost",
+            "Total Cost (%)",
+            "Annual Percentage (%)",
+            "YoY Change ($)",
+            "YoY Change (%)",
+            "Annual Summary"
+        ],
+        "row_count": 15,
+        "description": "Metadata for sheet 'YTD' without textual summaries."
+    },
+    "Department Cumulative": {
+        "columns": [
+            "AWS Account ID",
+            "Department",
+            "Department Cumulative ($)",
+            "Department Cumulative (%)",
+            "Department Cumulative Summary"
+        ],
+        "row_count": 5,
+        "description": "Metadata for sheet 'Department Cumulative' without textual summaries."
+    },
+    "Service Cumulative": {
+        "columns": [
+            "Service",
+            "AWS Account ID",
+            "Department",
+            "Total Cost ($)",
+            "Total Cost (%)",
+            "Service Summary"
+        ],
+        "row_count": 150,
+        "description": "Metadata for sheet 'Service Cumulative' without textual summaries."
+    }
+}
