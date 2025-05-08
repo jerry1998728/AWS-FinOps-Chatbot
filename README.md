@@ -10,7 +10,7 @@ It turns raw cost reports into meaningful insights, enabling users to ask natura
 ## End-To-End Pipeline
 - **Amazon S3** – Stores raw and transformed billing data
 - **Amazon OpenSearch Serverless** – Vector search for LLM retrieval (RAG)
-- **Amazon Bedrock** – Powers foundation models for response generation with a knowledge base connected to S3
+- **Amazon Bedrock** – Powers foundation models for response generation and evaluation with a knowledge base connected to S3
 - **Amazon Lex** – Front-end Integration for conversational user interface
 - **Foundation Model**
   - Selected Claude Haiku 3.7 (Sonnet Variant)
