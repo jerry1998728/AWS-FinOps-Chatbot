@@ -3,7 +3,7 @@
 ## Overview
 An intelligent finance reporting assistant that uses generative AI and AWS services to make complex cost data easily queryable and interpretable.
 This chatbot is designed for internal employees working with AWS billing data and wishes to keep track, gain insights, and make informed decisions. 
-It turns raw cost reports into meaningful insights, enabling users to ask natural-language questions and get accurate, explainable responses.
+It turns raw cost reports into meaningful insights, enabling users to ask natural-language questions and get consistently accurate, explainable, and ground truth-based responses.
 
 
 
@@ -12,7 +12,13 @@ It turns raw cost reports into meaningful insights, enabling users to ask natura
 - **Amazon OpenSearch Serverless** – Vector search for LLM retrieval (RAG)
 - **Amazon Bedrock** – Powers foundation models for response generation with a knowledge base connected to S3
 - **Amazon Lex** – Front-end Integration for conversational user interface
-
+- **Foundation Model**
+  - Selected Claude Haiku 3.7 (Sonnet Variant)
+    - High efficiency in cost and latency
+    - Solid context window length (~200K tokens)
+    - Human-like output tone and fluency
+    - Safety by default
+- **Foundation Model Evaluation (Manual)**
 ---
 
 
