@@ -3,7 +3,7 @@
 ## Overview
 An intelligent finance reporting assistant that uses generative AI and AWS services to make complex cost data easily queryable and interpretable.
 This chatbot is designed for internal employees working with AWS billing data and wishes to keep track, gain insights, and make informed decisions. 
-It turns raw cost reports into meaningful insights, enabling users to ask natural-language questions and get consistently accurate, explainable, and ground truth-based responses.
+It turns raw cost reports into meaningful insights, enabling users to ask natural-language questions and get consistently accurate, explainable, and ground-truth-based responses.
 
 
 
