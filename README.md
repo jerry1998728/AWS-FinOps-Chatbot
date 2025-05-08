@@ -19,6 +19,8 @@ It turns raw cost reports into meaningful insights, enabling users to ask natura
     - Human-like output tone and fluency
     - Safety by default
 - **Manual Foundation Model Evaluation**
+
+  
 ---
 
 
@@ -81,6 +83,9 @@ By exploring different chunking strategies, I discovered that the optimized way 
 - The LLM now answers simple and complex finance reporting and operational questions with consistent accuracy.
 - 100% Retrieval Precision.
 - 0% Non-Determinism and Hallucination.
+
+
+---
 
 
 ## Use Cases Validation & Evaluation with Ground Truth Comparison
