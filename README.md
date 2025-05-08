@@ -18,7 +18,7 @@ It turns raw cost reports into meaningful insights, enabling users to ask natura
     - Solid context window length (~200K tokens)
     - Human-like output tone and fluency
     - Safety by default
-- **Foundation Model Evaluation (Manual)**
+- **Manual Foundation Model Evaluation**
 ---
 
 
